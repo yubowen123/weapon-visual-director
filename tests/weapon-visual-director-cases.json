@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "direction-only-knife",
+      "phase": "tag_narrowing",
+      "input": "我想找一把刀。",
+      "expected_checks": [
+        "给出三条结构差异明确的方向并推荐一条",
+        "不在用户选定参考图前生成三模型最终提示词",
+        "不提供制造、改装或使用武器的操作指导"
+      ]
+    },
+    {
+      "id": "ming-tomb-keeper-candidate-selection",
+      "phase": "candidate_retrieval",
+      "input": "我想找一把刀，剧情背景是明末荒村的守墓人佩刀。",
+      "expected_checks": [
+        "候选图包含编号、预览、原始来源页和许可证状态",
+        "区分同代原型与邻近时代结构参考",
+        "明确避免宫廷华饰并等待用户选择"
+      ]
+    },
+    {
+      "id": "selected-w04-three-model-package",
+      "phase": "prompt_adaptation",
+      "input": "W04",
+      "expected_checks": [
+        "记录 W04 为唯一主结构参考并说明它晚于明末",
+        "输出 Preserve、Change、Avoid",
+        "分别输出 Midjourney、Nano Banana Pro 与 GPT Image 2 适配稿",
+        "GPT Image 2 卡片只包含标题、副标题、三个局部标签和简介"
+      ]
+    },
+    {
+      "id": "ming-tomb-keeper-w04-live-run",
+      "phase": "live_generation_and_visual_qa",
+      "input": "MJ用MJ的请求生成，GPT用codex本身插件生成。",
+      "fixture": "tests/fixtures/ming-tomb-keeper-w04-run.json",
+      "expected_checks": [
+        "Midjourney 结果来自真实 MJ 请求，不得由其他模型冒充",
+        "GPT 卡片逐字检查中文并核对三个局部窗映射",
+        "出现额外刀具的 MJ 图片必须标记为负例",
+        "记录失败任务、成功任务、最终费用和本地图片"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "selected_reference": {
+    "id": "W04",
+    "asset_path": "assets/evals/ming-tomb-keeper-w04/reference-w04.jpg",
+    "image_url": "https://images.metmuseum.org/CRDImages/aa/web-large/36.25.807ab_002june2014.jpg",
+    "landing_url": "https://www.metmuseum.org/art/collection/search/31607",
+    "source": "The Metropolitan Museum of Art",
+    "license": "Public Domain",
+    "license_verified": true,
+    "prototype_note": "对象页标注为中国 18 至 19 世纪短刀；本案例只继承结构，以其为灵感进行架空的明末民间转译。"
+  },
+  "design": {
+    "proposition": "明末荒村守墓人夜巡随身短刀，通过潮锈、烟熏、磨刃和多次补缠表现长期守坟生活。",
+    "preserve": [
+      "紧凑短刀比例",
+      "近乎笔直的单刃刀身",
+      "无明显护手的柱形握柄",
+      "狭长贴身刀鞘"
+    ],
+    "change": [
+      "将银饰刀鞘改为烟熏发黑的老榆木鞘",
+      "将华丽纹饰改为黑铁箍和粗麻绳修补",
+      "增加潮湿点蚀、磨亮刃口、泥土和香灰痕迹"
+    ],
+    "avoid": [
+      "清代宫廷装具与华丽银雕",
+      "龙纹、宝石、骷髅、符文和发光效果",
+      "额外武器、人物、手、血液、Logo 和水印"
+    ]
+  },
+  "prompts": {
+    "midjourney": {
+      "prompt": "A late-Ming Chinese rural tomb keeper short belt knife displayed beside its fitted wooden sheath, compact straight single-edged blade with a rounded point, guardless cylindrical wooden grip wrapped with worn hemp cord, dark forged steel with subtle damp pitting and a clean sharpened edge, smoke-blackened elmwood sheath reinforced by three simple iron bands, aged by earth, rain, incense smoke and years of careful use, one complete knife only, fully visible three-quarter museum product view, dark charcoal background, warm low lantern light, realistic historical film prop photography --v 8.1 --ar 3:2 --q 1"
+    },
+    "nano_banana_pro": {
+      "prompt": "Use Image 1 as the primary structural reference.\n\nPreserve:\n- Compact proportions, straight single-edged blade, rounded point, guardless cylindrical grip, narrow fitted sheath.\n\nChange:\n- Replace refined decoration with dark forged steel, old elmwood, black iron bands and faded hemp repairs.\n\nComposition:\n- One complete knife beside one matching sheath, fully visible, three-quarter product view on charcoal gray.\n\nConstraints:\n- No extra weapons, people, hands, blood, text, logo, watermark or fantasy ornament."
+    },
+    "gpt_image_2": {
+      "prompt": "Create a vertical 3:4 museum-grade weapon card using Image 1 as the primary structural reference. Preserve the compact short blade, guardless grip and fitted sheath. Show one complete weapon and three detail panels. Detail panel 1 shows the hemp-wrapped grip and connects to the grip. Detail panel 2 shows the pitted blade and connects to the blade. Detail panel 3 shows the iron-banded wooden sheath and connects to the sheath. Render exactly: \"守墓夜刀\", \"明末·守墓人佩刀\", \"麻绳缠柄\", \"潮蚀旧刃\", \"铁箍木鞘\", and \"荒村守墓人夜巡随身短刀，刀身留有潮锈与反复磨刃痕，旧木鞘以麻绳和铁箍补固。\" Do not add any other text, numbers, logos or watermarks.",
+      "display_text": {
+        "title": "守墓夜刀",
+        "subtitle": "明末·守墓人佩刀",
+        "detail_labels": [
+          "麻绳缠柄",
+          "潮蚀旧刃",
+          "铁箍木鞘"
+        ],
+        "description": "荒村守墓人夜巡随身短刀，刀身留有潮锈与反复磨刃痕，旧木鞘以麻绳和铁箍补固。"
+      }
+    }
+  }
+}

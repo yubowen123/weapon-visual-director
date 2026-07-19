@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "case_id": "ming-tomb-keeper-w04-live-run",
+  "prompt_package": "tests/fixtures/ming-tomb-keeper-w04-prompt-package.json",
+  "selected_reference": {
+    "id": "W04",
+    "path": "assets/evals/ming-tomb-keeper-w04/reference-w04.jpg",
+    "landing_url": "https://www.metmuseum.org/art/collection/search/31607",
+    "source": "The Metropolitan Museum of Art",
+    "license": "Public Domain"
+  },
+  "live_jobs": [
+    {
+      "model": "Midjourney V8.1 via Alibaba Youchuan",
+      "job_id": "6a5c5e894a6b6a195bd019aa",
+      "request_kind": "image_prompt",
+      "final_status": 3,
+      "comment": "执行报错",
+      "url_count": 0,
+      "final_fee_cost": 0
+    },
+    {
+      "model": "Midjourney V8.1 via Alibaba Youchuan",
+      "job_id": "6a5c6047ae1c4aac0eef6c38",
+      "request_kind": "text_only_with_extended_parameters",
+      "final_status": 3,
+      "comment": "执行报错",
+      "url_count": 0,
+      "final_fee_cost": 0
+    },
+    {
+      "model": "Midjourney V8.1 via Alibaba Youchuan",
+      "job_id": "6a5c6b51ae1c4aac0eef70aa",
+      "request_kind": "simplified_text_only",
+      "final_status": 2,
+      "comment": "成功",
+      "url_count": 4,
+      "final_fee_cost": 60,
+      "seed": 3662131531,
+      "audits": ["", "", "", ""]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "assets/evals/ming-tomb-keeper-w04/reference-w04.jpg",
+      "model": "museum reference",
+      "role": "source_reference",
+      "sha256": "472c5437a1f6a805fb3c9172945197301952488b28cf1ddf7e9cf8fecb95b908"
+    },
+    {
+      "path": "assets/evals/ming-tomb-keeper-w04/gpt-image-2-line-mismatch.png",
+      "model": "GPT Image 2",
+      "role": "negative_fixture",
+      "sha256": "1fdd5c0a5d87403e34857a45169cebf53e5ed9aea94b45ef6aa5fa04a2552dbd",
+      "expected_issues": [
+        "刃部细节窗的标注线起点落在握柄",
+        "握柄细节窗的标注线起点落在刀身",
+        "刀鞘细节窗的标注线起点落在刀身"
+      ]
+    },
+    {
+      "path": "assets/evals/ming-tomb-keeper-w04/gpt-image-2-line-corrected.png",
+      "model": "GPT Image 2",
+      "role": "positive_fixture",
+      "sha256": "4c63a68bc4deaaffbab88f8b166ea47bfed8f2505c75cb75362f04f4725a7f08",
+      "expected_checks": [
+        "麻绳缠柄窗连接握柄",
+        "潮蚀旧刃窗连接刀身",
+        "铁箍木鞘窗连接独立刀鞘",
+        "标题为守墓夜刀且只有规定文案"
+      ]
+    },
+    {
+      "path": "assets/evals/ming-tomb-keeper-w04/mj-1-duplicate-reject.png",
+      "model": "Midjourney V8.1",
+      "role": "negative_fixture",
+      "sha256": "e01c35f91d584543a0b502e958f3fd266a8487d10bd7c371dc09b272552c589c",
+      "expected_issues": [
+        "出现两把刀，违反 one weapon only"
+      ]
+    },
+    {
+      "path": "assets/evals/ming-tomb-keeper-w04/mj-2.png",
+      "model": "Midjourney V8.1",
+      "role": "positive_fixture",
+      "sha256": "f5f5e0440e923e0ec1e1d4f9a8a05d5554f957d1c8b8fc6dfac86956a65638e9",
+      "expected_checks": [
+        "单把短刀和独立木鞘",
+        "握柄缠麻且没有人物或文字"
+      ]
+    },
+    {
+      "path": "assets/evals/ming-tomb-keeper-w04/mj-3.png",
+      "model": "Midjourney V8.1",
+      "role": "positive_fixture",
+      "sha256": "7e75f0c328a0f8b5be43884fe8c52c274abaded97bf6289cf16c261b2e389b03",
+      "expected_checks": [
+        "单把厚重短刀和独立木鞘",
+        "潮蚀钢刃、铁箍与荒村旧化清晰"
+      ]
+    },
+    {
+      "path": "assets/evals/ming-tomb-keeper-w04/mj-4-recommended.png",
+      "model": "Midjourney V8.1",
+      "role": "recommended_output",
+      "sha256": "aeb6cd70cd3cbd763a900e8f63869825ceb6ba2207ebe5e5122ec1bce7a50c35",
+      "expected_checks": [
+        "单把短刀和独立木鞘完整入画",
+        "短直刃、无护手木柄与紧凑比例最接近 W04",
+        "没有人物、手、血液、文字、Logo 或水印"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "武器视觉导演"
+  short_description: "检索武器参考、引导选图并输出三平台图生图与介绍卡提示词"
+  default_prompt: "使用 $weapon-visual-director 从武器方向和剧情描述开始，筛选参考图并生成三平台适配提示词。"
